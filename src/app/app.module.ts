@@ -1,3 +1,4 @@
+import { NewsService } from './services/news.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,6 +15,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
 import { SliderComponent } from './components/slider/slider.component';
 import { LatestnewsComponent } from './components/latestnews/latestnews.component';
 import { SportsnewsComponent } from './components/sportsnews/sportsnews.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,16 +28,16 @@ import { SportsnewsComponent } from './components/sportsnews/sportsnews.componen
     SportsComponent,
     SliderComponent,
     LatestnewsComponent,
-    SportsnewsComponent,
-
+    SportsnewsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

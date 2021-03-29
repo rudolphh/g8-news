@@ -1,3 +1,5 @@
+import { NewsArticle } from './../../models/newsArticle';
+import { NewsService } from './../../services/news.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestnewsComponent implements OnInit {
 
-  constructor() { }
+  newsArticles : NewsArticle [] = [];
+
+  constructor(private newsService : NewsService) { }
 
   ngOnInit(): void {
+
+    this.newsService.getTopNews().subscribe((data) => this.newsArticles = data);
   }
 
 }

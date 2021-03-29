@@ -17,6 +17,7 @@
     margin: 3rem 0;
     background: #ffffff;
     height: 14.75rem;
+    display: flex;
   }
   .tabs::before,
   .tabs::after {
@@ -28,6 +29,7 @@
   }
   .tab {
     float: left;
+    flex-grow: 1;
   }
   .tab-switch {
     display: none;
@@ -53,7 +55,7 @@
     height: 12rem;
     position: absolute;
     z-index: 1;
-    top: 2.75em;
+    top: 3em;
     left: 0;
     padding: 1.618rem;
     background: #fff;
