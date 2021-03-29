@@ -35,10 +35,10 @@ export class SliderComponent implements OnInit {
         items: 1
       },
       800: {
-        items: 2
+        items: 1
       },
       1200: {
-        items: 3
+        items: 1
       }
     },
     nav: true
