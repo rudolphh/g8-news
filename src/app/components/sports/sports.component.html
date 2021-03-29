@@ -1,26 +1,6 @@
 
 
-<div class ="container text-center">
-
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide>
-        <a href="https://clutchpoints.com/buccaneers-news-tom-brady-speaks-out-on-possibility-of-passing-michael-jordan-in-rings/" target="_blank"> 
-             <img src="assets/image_sports_1.jpg" height="400" style="width: 100%" /> 
-            </a>
-      </ng-template> 
-      <ng-template carouselSlide>
-        <a href="https://www.theringer.com/nba/2020/2/17/21138373/nba-player-ranking-2019-20-all-star-break" target="_blank"> 
-          <img src="assets/image_sports_2.jpg" height="400" style="width: 100%"/> 
-        </a>
-      </ng-template>  
-      <ng-template carouselSlide>
-        <a href="https://www.gamblingsites.org/blog/4-differences-between-betting-online-in-person/" target="_blank">
-          <img src="assets/image_sports_3.jpg" height="400" style="width: 100%" /> 
-        </a>
-      </ng-template>  
-    </owl-carousel-o>
-  </div>
-
+<app-slider [images]="sportsImages"></app-slider>
 
 <app-sportsnews></app-sportsnews>
 

@@ -1,20 +1,16 @@
 
-<div class ="container text-center">
+<div class ="text-center">
 
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>
-      <a href="https://vaccinefinder.org/search/" target="_blank">
-         <img src="assets/image_home_1.jpg" height="400" style="width: 100%" />
-        </a>
-    </ng-template>
-    <ng-template carouselSlide>
-      <a href="https://www.bloomberg.com/news/articles/2021-03-27/insurers-may-be-on-hook-for-millions-tied-to-suez-canal-crisis" target="_blank">
-         <img src="assets/image_home_2.jpg" height="400" style="width: 100%" />
-        </a>
-    </ng-template>
-    <ng-template carouselSlide>
-      <a href="https://www.bbc.com/news/world-asia-india-56517495" target="_blank">
-        <img src="assets/image_home_3.jpg" height="400" style="width: 100%" /> </a>
-    </ng-template>
+
+    <ng-container *ngFor="let slide of images">
+
+      <ng-template carouselSlide>
+        <a [href]="slide.href" target="_blank">
+          <img [src]="slide.src" />
+          </a>
+      </ng-template>
+
+    </ng-container>
   </owl-carousel-o>
 </div>

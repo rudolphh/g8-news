@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ImageItem } from 'src/app/models/imageItem';
 
 @Component({
   selector: 'app-slider',
@@ -8,10 +9,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class SliderComponent implements OnInit {
 
+  @Input() images : ImageItem [] = [];
+
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -26,13 +29,16 @@ export class SliderComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
-        items: 3
+        items: 1
       },
       800: {
-        items: 1
+        items: 2
+      },
+      1200: {
+        items: 3
       }
     },
     nav: true
