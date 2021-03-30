@@ -6,11 +6,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SportsComponent } from './components/sports/sports.component';
 
 const routes: Routes = [
-  { path: "", component:HomeComponent },
-  { path: "home", component:HomeComponent },
+  { path: "", component: HomeComponent, data: { kind: 'normal' } },
+  { path: "home", component: HomeComponent, data: { kind: 'normal' } },
   { path: "aboutus", component:AboutusComponent },
   { path: "contactus", component:ContactusComponent },
-  { path: "sports", component:SportsComponent }
+  { path: "sports", component: HomeComponent, data: { kind: 'sports' } }
 ];
 
 @NgModule({

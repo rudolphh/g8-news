@@ -2,6 +2,7 @@ import { NewsService } from './../../services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ImageItem } from 'src/app/models/imageItem';
 import { NewsArticle } from '../../models/newsArticle';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,23 +11,49 @@ import { NewsArticle } from '../../models/newsArticle';
 })
 export class HomeComponent implements OnInit {
 
-  homeArticles : NewsArticle [] = [];
-  homeImages : ImageItem[] = [];
+  articles : NewsArticle [] = [];
+  images : ImageItem[] = [];
 
-  constructor(private newsService : NewsService) { }
+  constructor(
+    private newsService : NewsService,
+    private activatedRoute : ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
 
-    this.newsService.getTopNews().subscribe(data => {
-      this.homeArticles = data;
+    this.activatedRoute.data.subscribe(data => {
+      switch (data.kind) {
+        case 'sports' :
 
-      this.homeArticles.forEach(article => {
-        this.homeImages.push({
-          id: article._id,
-          href: article.url,
-          src: article.urlToImage
+        this.newsService.getTopSports().subscribe(data => {
+          this.articles = data;
+
+          this.articles.forEach(article => {
+            this.images.push({
+              id: article._id,
+              href: article.url,
+              src: article.urlToImage
+            });
+          });
         });
-      })
+
+        break;
+
+        default:
+
+          this.newsService.getTopNews().subscribe(data => {
+            this.articles = data;
+
+            this.articles.forEach(article => {
+              this.images.push({
+                id: article._id,
+                href: article.url,
+                src: article.urlToImage
+              });
+            })
+          });
+
+      }
     });
 
   }
