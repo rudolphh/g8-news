@@ -5,4 +5,5 @@ export interface NewsArticle {
   url ?: string;
   urlToImage ?: string;
   publishedAt ?: string;
+  category ?: string;
 }

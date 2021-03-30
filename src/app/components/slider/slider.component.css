@@ -5,3 +5,7 @@ img {
   width: auto;
   height: auto;
 }
+
+#carousel {
+  margin-top: 30px;
+}

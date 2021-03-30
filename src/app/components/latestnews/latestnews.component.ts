@@ -1,6 +1,6 @@
 import { NewsArticle } from './../../models/newsArticle';
 import { NewsService } from './../../services/news.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class LatestnewsComponent implements OnInit {
 
-  newsArticles : NewsArticle [] = [];
+  @Input() articles : NewsArticle [] = [];
 
   checked : number = 0;
 
@@ -22,8 +22,6 @@ export class LatestnewsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-
-    this.newsService.getTopNews().subscribe((data) => this.newsArticles = data);
 
     this.dataService.currentCarouselIndex.subscribe((index) => this.checked = index);
 

@@ -12,8 +12,13 @@ export class NewsService {
   constructor(private httpClient : HttpClient) { }
 
   topNewsUrl : string = 'http://localhost:4000/top-news';
+  topSportsUrl : string = 'http://localhost:4000/top-sports';
 
   getTopNews() : Observable<NewsArticle[]> {
     return this.httpClient.get<NewsArticle[]> (this.topNewsUrl);
+  }
+
+  getTopSports() : Observable<NewsArticle[]> {
+    return this.httpClient.get<NewsArticle[]> (this.topSportsUrl);
   }
 }

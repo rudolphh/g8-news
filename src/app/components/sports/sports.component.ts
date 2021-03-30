@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ImageItem } from 'src/app/models/imageItem';
+import { NewsService } from '../../services/news.service';
+import { NewsArticle } from '../../models/newsArticle';
 
 @Component({
   selector: 'app-sports',
@@ -9,28 +11,24 @@ import { ImageItem } from 'src/app/models/imageItem';
 })
 export class SportsComponent implements OnInit {
 
+  sportsArticles : NewsArticle[] = [];
   sportsImages : ImageItem[] = [];
 
-  constructor() { }
+  constructor(private newsService : NewsService) { }
 
   ngOnInit(): void {
 
-    this.sportsImages = [
-      {
-        id: 1,
-        href: 'https://clutchpoints.com/buccaneers-news-tom-brady-speaks-out-on-possibility-of-passing-michael-jordan-in-rings/',
-        src: 'assets/image_sports_1.jpg'
-      },
-      {
-        id: 2,
-        href: 'https://www.theringer.com/nba/2020/2/17/21138373/nba-player-ranking-2019-20-all-star-break',
-        src: 'assets/image_sports_2.jpg'
-      },
-      {
-        id: 3,
-        href: 'https://www.gamblingsites.org/blog/4-differences-between-betting-online-in-person/',
-        src: 'assets/image_sports_3.jpg'
-      }
-    ];
+    this.newsService.getTopSports().subscribe(data => {
+      this.sportsArticles = data;
+
+      this.sportsArticles.forEach(article => {
+        this.sportsImages.push({
+          id: article._id,
+          href: article.url,
+          src: article.urlToImage
+        });
+      });
+    });
+
   }
 }

@@ -1,9 +1,10 @@
 <div class="container">
     <div class="tabs">
-      <div *ngFor="let article of newsArticles; let i = index" class="tab">
+      <div *ngFor="let article of articles; let i = index" class="tab">
         <input type="radio" name="css-tabs" id="tab-{{ i+1 }}" [checked]="checked==i" class="tab-switch"
              >
-        <label for="tab-{{ i+1 }}" class="tab-label" (click)="getPassedDataTab(i)" >{{ article.title }}</label>
+        <label for="tab-{{ i+1 }}" class="tab-label" (click)="getPassedDataTab(i)" >
+          {{ (article.title!.length>60)? (article.title | slice:0:60)+'..':(article.title) }}</label>
         <div class="tab-content">{{ article.description }}<a [href]="article.url" target="_blank">(more)</a>  </div>
       </div>
   </div>

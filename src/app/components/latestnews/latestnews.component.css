@@ -14,7 +14,7 @@
   }
   .tabs {
     position: relative;
-    margin: 3rem 0;
+    margin: 1rem 0;
     background: #ffffff;
     height: 14.75rem;
     display: flex;
@@ -52,7 +52,7 @@
     transition: top 0.25s;
   }
   .tab-content {
-    height: 12rem;
+    height: 21rem;
     position: absolute;
     z-index: 1;
     top: 3em;
@@ -63,6 +63,7 @@
     border-bottom: 0.25rem solid #ffffff;
     opacity: 0;
     transition: all 0.35s;
+    padding: 50px;
   }
   .tab-switch:checked + .tab-label {
     background: #fff;
