@@ -1,4 +1,4 @@
-import { NewsService } from './../../services/news.service';
+import { NewsService } from '../../services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ImageItem } from 'src/app/models/imageItem';
 import { NewsArticle } from '../../models/newsArticle';

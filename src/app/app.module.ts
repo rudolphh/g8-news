@@ -9,13 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { SportsComponent } from './components/sports/sports.component';
-import {CarouselModule} from 'ngx-owl-carousel-o';
-import { SliderComponent } from './components/slider/slider.component';
-import { LatestnewsComponent } from './components/latestnews/latestnews.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NewsModule } from './news/news.module';
 
 @NgModule({
   declarations: [
@@ -23,21 +19,17 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     AboutusComponent,
     ContactusComponent,
-    FooterComponent,
-    HomeComponent,
-    SportsComponent,
-    SliderComponent,
-    LatestnewsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CarouselModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NewsModule
   ],
-  providers: [NewsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
