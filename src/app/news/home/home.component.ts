@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   articles : NewsArticle [] = [];
   images : ImageItem[] = [];
 
+  displayChat : boolean = true;
+
   constructor(
     private newsService : NewsService,
     private activatedRoute : ActivatedRoute
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
       switch (data.kind) {
         case 'sports' :
           this.newsService.getTopSports().subscribe(data => this.extract(data));
+          this.displayChat = false;
           break;
 
         default:
