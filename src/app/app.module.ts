@@ -10,7 +10,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { NewsModule } from './news/news.module';
 
 @NgModule({
@@ -26,8 +25,7 @@ import { NewsModule } from './news/news.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    NewsModule
+    NewsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,40 @@
+.main-chat{
+    position: absolute;
+    z-index: 99 !important;
+    top: 100%;
+    right: 0%;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);    /* border: 1px solid blue; */
+    outline: none;
+    border: none;
+}
+
+
+
+textarea {
+    height:200px; 
+    width:310px;
+    background: light greenyellow;
+    border: 1px solid blue;
+    border-radius: 8px;
+}
+
+.name{
+    color: white;
+}
+input{
+    border: none;
+    outline: none;
+    margin-left: 1px;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    color: white;
+    border: 1px solid white;
+    margin: 3px 3px 3px 3px;
+}
+.chat-controls {
+    
+}
