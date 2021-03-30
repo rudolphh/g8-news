@@ -24,38 +24,29 @@ export class HomeComponent implements OnInit {
     this.activatedRoute.data.subscribe(data => {
       switch (data.kind) {
         case 'sports' :
-
-        this.newsService.getTopSports().subscribe(data => {
-          this.articles = data;
-
-          this.articles.forEach(article => {
-            this.images.push({
-              id: article._id,
-              href: article.url,
-              src: article.urlToImage
-            });
-          });
-        });
-
-        break;
+          this.newsService.getTopSports().subscribe(data => this.extract(data));
+          break;
 
         default:
-
-          this.newsService.getTopNews().subscribe(data => {
-            this.articles = data;
-
-            this.articles.forEach(article => {
-              this.images.push({
-                id: article._id,
-                href: article.url,
-                src: article.urlToImage
-              });
-            })
-          });
-
+          this.newsService.getTopNews().subscribe(data => this.extract(data));
       }
     });
 
+  }// end ngOnInit
+
+  extract(data : NewsArticle[]) {
+    this.articles = data;
+    this.extractImages(data);
+  }
+
+  extractImages(news : NewsArticle[]) {
+    news.forEach((article) => {
+      this.images.push({
+        id: article._id,
+        href: article.url,
+        src: article.urlToImage
+      });
+    });
   }
 
 }

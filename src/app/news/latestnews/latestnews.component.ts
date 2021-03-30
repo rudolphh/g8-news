@@ -17,7 +17,6 @@ export class LatestnewsComponent implements OnInit {
   activeTab : number = 0;
 
   constructor(
-    private newsService : NewsService,
     private dataService : DataService
     ) { }
 

@@ -67,8 +67,6 @@ export class SliderComponent implements OnInit {
   getPassedData(data: SlidesOutputData) {
     this.activeSlides = data;
     let currentSlidePosition = this.activeSlides.startPosition;
-    //console.log(this.activeSlides);
-    //console.log(currentSlidePosition);
     this.dataService.changeCarouselIndex(currentSlidePosition!);
   }
 
