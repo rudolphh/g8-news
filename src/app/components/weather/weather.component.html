@@ -1,39 +1,39 @@
 
-    <div class="container py-3 navbar-expand-lg navbar-dark bg-primary" style="background-image: url('https://res.cloudinary.com/dxfq3iotg/image/upload/v1559286899/weatherbg.jpg');">
-        <div class="row">
-          <div class="col">
-            <span class="navbar-text" style="color:white">
-                <h3>&nbsp; Weather </h3>
-            </span>
-          </div>
-
-          <div class="col">
+    <div id="weather-bar" class="navbar-expand-lg navbar-dark " >
+        <div id="weather-container" class="container">
+          <div class="weather-section">
             <span class="navbar-text" >
-                <h3>{{description}}</h3>
+                <h6 *ngIf="description">Weather</h6>
             </span>
           </div>
 
-          <div class="col">
-            <span class="navbar-text" style="color:white">
+          <div class="weather-section">
+            <span class="navbar-text" >
+                <h6>{{description}}</h6>
+            </span>
+          </div>
+
+          <div class="weather-section">
+            <span class="navbar-text">
                 <img src={{imageUrl}}>
             </span>
           </div>
 
-          <div class="col">
+          <div class="weather-section">
             <span class="navbar-text">
-                <h3>{{tempF}}<sup>F</sup></h3>
+                <h6 *ngIf="tempF">{{tempF}}<sup>F</sup></h6>
             </span>
           </div>
 
-          <div class="col">
+          <div class="weather-section">
             <span class="navbar-text" >
-                <h3 >{{location}}</h3>
+                <h6 >{{location}}</h6>
             </span>
           </div>
 
-          <!-- <div class="col">
+          <!-- <div class="weather-section">
             <span class="navbar-text">
-                <h3>{{date}}</h3>
+                <h6>{{date}}</h6>
             </span>
           </div> -->
 

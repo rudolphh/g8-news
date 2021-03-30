@@ -3,20 +3,18 @@
     z-index: 99 !important;
     top: 100%;
     right: 0%;
-    background-color: #2a2a72;
-    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);    /* border: 1px solid blue; */
+    background-color: black;
     outline: none;
-    border: none;
+    border-top-left-radius: 10px;
+    width: 327px;
 }
 
-
-
 textarea {
-    height:200px; 
-    width:310px;
-    background: light greenyellow;
-    border: 1px solid blue;
-    border-radius: 8px;
+  background-color: white;
+  width: 100%;
+  border-top-left-radius: 10px;
+  height: 180px;
+  padding: 10px;
 }
 
 .name{
@@ -36,5 +34,13 @@ input{
     margin: 3px 3px 3px 3px;
 }
 .chat-controls {
-    
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#nickname {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

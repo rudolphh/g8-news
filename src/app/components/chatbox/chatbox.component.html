@@ -1,22 +1,14 @@
-<html>
-    <head></head>
-    <body>
-        <div class="main-chat" id="main-chat">
-            <div>
-                <textarea id="textarea"></textarea>
-                <p>
-                   <input id="nickText" type="text" [(ngModel)]="nick" required> <span class="name"> Enter Nickname </span>
-                </p>
-                <p class = "chat-controls">
-                    <input id="chatText" type="text" [(ngModel)]="message">
-                    <button id="chat" class="btn" (click)="SendMessage()">Send Message</button>
-                </p>
-            </div>
-        </div>
-    </body>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-</html>
-
-
+<div class="main-chat" id="main-chat">
+    <div>
+        <textarea id="textarea"></textarea>
+        <p id="nickname">
+            <input id="nickText" type="text" [(ngModel)]="nick" required>
+            <span class="name"> Nickname </span>
+        </p>
+        <p class = "chat-controls">
+            <input id="chatText" type="text" [(ngModel)]="message">
+            <button id="chat" class="btn" (click)="SendMessage()">Send</button>
+        </p>
+    </div>
+</div>
