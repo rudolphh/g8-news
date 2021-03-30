@@ -52,7 +52,7 @@
     transition: top 0.25s;
   }
   .tab-content {
-    height: 21rem;
+    height: 16rem;
     position: absolute;
     z-index: 1;
     top: 3em;
