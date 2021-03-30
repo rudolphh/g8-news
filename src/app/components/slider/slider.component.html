@@ -1,11 +1,13 @@
 
 <div class ="container text-center">
 
-  <owl-carousel-o #owlElement [options]="customOptions">
+  <owl-carousel-o #owlElement [options]="customOptions"
+                (changed)="getPassedData($event)">
 
-    <ng-container *ngFor="let slide of images">
+    <ng-container *ngFor="let slide of images; let i = index;">
 
-      <ng-template carouselSlide>
+      <ng-template carouselSlide [id]="'slide-' + (i+1)" >
+
         <a [href]="slide.href" target="_blank">
           <img [src]="slide.src" />
           </a>

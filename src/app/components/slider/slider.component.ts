@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { CarouselComponent, OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ImageItem } from 'src/app/models/imageItem';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-slider',
@@ -11,10 +12,28 @@ export class SliderComponent implements OnInit {
 
   @Input() images : ImageItem [] = [];
 
+  @ViewChild('owlElement') carousel !: CarouselComponent;
 
-  constructor() { }
+  activeSlides !: SlidesOutputData;
 
-  ngOnInit(): void { }
+  activeTab : number = 0;
+
+  afterFirst : boolean = false;
+
+  constructor(private dataService : DataService) { }
+
+  ngOnInit(): void {
+    this.dataService.currentTabIndex.subscribe((index) => {
+      console.log('in slider activeTab : ' + index);
+      this.activeTab = index;
+
+      if(this.afterFirst){
+        this.carousel.to('slide-'+(this.activeTab+1));
+      } else {
+        this.afterFirst = true;
+      }
+    });
+  }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -42,6 +61,15 @@ export class SliderComponent implements OnInit {
       }
     },
     nav: true
+  }
+
+
+  getPassedData(data: SlidesOutputData) {
+    this.activeSlides = data;
+    let currentSlidePosition = this.activeSlides.startPosition;
+    //console.log(this.activeSlides);
+    //console.log(currentSlidePosition);
+    this.dataService.changeCarouselIndex(currentSlidePosition!);
   }
 
 }

@@ -1,8 +1,9 @@
 <div class="container">
     <div class="tabs">
       <div *ngFor="let article of newsArticles; let i = index" class="tab">
-        <input type="radio" name="css-tabs" id="tab-{{ i+1 }}" [attr.checked]="i < 1 ? 'checked' : null" class="tab-switch">
-        <label for="tab-{{ i+1 }}" class="tab-label"  >{{ article.title }}</label>
-        <div class="tab-content">{{ article.description }}<a href="https://www.w3schools.com/">(more)</a>  </div>
+        <input type="radio" name="css-tabs" id="tab-{{ i+1 }}" [checked]="checked==i" class="tab-switch"
+             >
+        <label for="tab-{{ i+1 }}" class="tab-label" (click)="getPassedDataTab(i)" >{{ article.title }}</label>
+        <div class="tab-content">{{ article.description }}<a [href]="article.url" target="_blank">(more)</a>  </div>
       </div>
   </div>

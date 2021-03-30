@@ -16,6 +16,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { LatestnewsComponent } from './components/latestnews/latestnews.component';
 import { SportsnewsComponent } from './components/sportsnews/sportsnews.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     CarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
