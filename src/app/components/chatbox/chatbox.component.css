@@ -1,46 +1,158 @@
-.main-chat{
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap%27');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  z-index: 999 !important;
+}
+body{
+  background: #f2f2f2;
+    margin-bottom: -20px;
+}
+
+label{
     position: absolute;
-    z-index: 99 !important;
-    top: 100%;
-    right: 0%;
-    background-color: black;
+    right: 8px;
+    bottom: 20px;
+    height: 55px;
+    width: 55px;
+    background: -webkit-radial-gradient(circle, white, black);;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    margin-bottom: -20px;
+
+}
+
+label i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+label i.fa-check-circle-o{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#click:checked ~ label i.fa-check-circle-o {
+    opacity: 1;
+    pointer-events: auto;
+}
+#click:checked ~ label i.fa-comment-o {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper{
+    position: absolute;
+    right: 10px;
+    bottom: 120px;
+    max-width: 300px;
+    background: #fff;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    border-radius: 15px 15px 0 0;
+
+}
+
+#click:checked ~ .wrapper {
+    opacity: 1;
+    bottom: 85px;
+    pointer-events: auto;
+}
+
+.wrapper .head-text{
+    line-height: 60px;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 20px;
+    background:Black;
+}
+
+.wrapper .chat-box{
+    padding: 5px;
+    width: 100%;
+}
+.chat-box .form{
+    /* padding: 10px 15px; */
+    border-radius: 25px;
+}
+.chat-box .form .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chat-box .form .field:last-child{
+    margin-bottom: 15px;
+}
+
+.textarea textarea{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
     outline: none;
-    border-top-left-radius: 10px;
-    width: 327px;
+    border-radius: 25px;
+    font-size: 16px;
 }
 
-textarea {
-  background-color: white;
-  width: 100%;
-  border-top-left-radius: 10px;
-  height: 180px;
-  padding: 10px;
+.form .field input,
+.form .field button,
+.form .textarea textarea{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
 }
 
-.name{
-    color: white;
+.form .field input::placeholder,
+.form .textarea textarea::placeholder{
+    color: silver;
+    transition: all 0.3s ease;
 }
-input{
+
+.form .field input::placeholder,
+.form .field button::placeholder,
+.form .textarea textarea::placeholder{
+    color:lightgrey;
+}
+
+.chat-box .form .textarea{
+    height: 70px;
+    width: 100%;
+}
+
+.chat-box .form .textarea textarea{
+    height: 100%;
+    border-radius: 50px;
+    resize: none;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+.chat-box .form .field button{
     border: none;
     outline: none;
-    margin-left: 1px;
+    cursor: pointer;
+    background: Black;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
 }
 
-.btn{
-    outline: none;
-    border: none;
-    color: white;
-    border: 1px solid white;
-    margin: 3px 3px 3px 3px;
-}
-.chat-controls {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#nickname {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.chat-box .form .field button:active{
+    transition: scale(0.97);
 }

@@ -1,14 +1,27 @@
+<input type="checkbox" id="click">
+<label for="click">
+    <i class="fa fa-comment-o" aria-hidden="true"></i>
+    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+</label>
+<div class="wrapper">
+    <div class="head-text">Chat</div>
+    <div class="chat-box">
 
-<div class="main-chat" id="main-chat">
-    <div>
-        <textarea id="textarea"></textarea>
-        <p id="nickname">
-            <input id="nickText" type="text" [(ngModel)]="nick" required>
-            <span class="name"> Nickname </span>
-        </p>
-        <p class = "chat-controls">
-            <input id="chatText" type="text" [(ngModel)]="message">
-            <button id="chat" class="btn" (click)="SendMessage()">Send</button>
-        </p>
+        <div class="field textarea">
+            <textarea cols="30" rows="10" id="textarea"></textarea>
+        </div>
+        <div class= "form">
+            <div class="field">
+                <input placeholder="name" id="nickText" type="text" [(ngModel)]="nick" required/>
+            </div>
+            <div class="field textarea">
+                <textarea cols="30" rows="10" id="chatText" type="text" [(ngModel)]="message" required></textarea>
+            </div>
+            <div class="field">
+                <button (click)="SendMessage()">Start Chat</button>
+            </div>
+        </div>
+
+
     </div>
 </div>
