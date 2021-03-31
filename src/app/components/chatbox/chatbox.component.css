@@ -41,13 +41,17 @@ label i.fa-check-circle-o{
     pointer-events: none;
 }
 
+#click {
+  display: none;
+}
+
 #click:checked ~ label i.fa-check-circle-o {
     display: block;
     pointer-events: auto;
 }
-#click:checked ~ label i.fa-comment-o {
-    display: none;
-    pointer-events: none;
+#click:checked ~ label i.fa-comment {
+  display: none;
+  pointer-events: none;
 }
 
 .wrapper{

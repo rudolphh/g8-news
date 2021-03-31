@@ -1,27 +1,42 @@
-<input type="checkbox" id="click">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<input type="checkbox" id="click" />
 <label for="click">
-    <i class="fa fa-comment" aria-hidden="true"></i>
-    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+  <i class="fa fa-comment" aria-hidden="true"></i>
+  <i class="fa fa-check-circle-o" aria-hidden="true"></i>
 </label>
 <div class="wrapper">
-    <div class="head-text">Chat</div>
-    <div class="chat-box">
-
-        <div class="field textarea">
-            <textarea cols="30" rows="10" id="textarea"></textarea>
-        </div>
-        <div class= "form">
-            <div class="field">
-                <input placeholder="name" id="nickText" type="text" [(ngModel)]="nick" required/>
-            </div>
-            <div class="field textarea">
-                <textarea cols="30" rows="10" id="chatText" type="text" [(ngModel)]="message" required></textarea>
-            </div>
-            <div class="field">
-                <button (click)="SendMessage()">Start Chat</button>
-            </div>
-        </div>
-
-
+  <div class="head-text">Chat</div>
+  <div class="chat-box">
+    <div class="field textarea">
+      <textarea cols="30" rows="10" id="textarea"></textarea>
     </div>
+    <div class="form">
+      <div class="field">
+        <input
+          placeholder="name"
+          id="nickText"
+          type="text"
+          [(ngModel)]="nick"
+          required
+        />
+      </div>
+      <div class="field textarea">
+        <textarea
+          cols="30"
+          rows="10"
+          id="chatText"
+          type="text"
+          [(ngModel)]="message"
+          required
+        ></textarea>
+      </div>
+      <div class="field">
+        <button (click)="SendMessage()">Start Chat</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -63,7 +63,7 @@
     border-bottom: 0.25rem solid #ffffff;
     opacity: 0;
     transition: all 0.35s;
-    padding: 50px;
+    padding: 20px 50px 20px 50px;
   }
   .tab-switch:checked + .tab-label {
     background: #fff;
@@ -78,4 +78,21 @@
     z-index: 2;
     opacity: 1;
     transition: all 0.35s;
+  }
+
+  #title-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px 10px 0px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dcdddc;
+  }
+
+  #title {
+    font-weight: bold;
+  }
+
+  #published-at {
+    margin-left: auto;
+    font-size: 12px;
   }

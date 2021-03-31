@@ -20,10 +20,6 @@
     background: rgb(2, 2, 2);
   }
 
-  #navbarNav {
- 
-  }
-
   #navbar {
     display: flex;
     justify-content: space-evenly;

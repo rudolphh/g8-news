@@ -42,7 +42,7 @@ export class SliderComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 1000,
-    navText: ['', ''],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1
