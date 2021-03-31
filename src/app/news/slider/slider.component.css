@@ -9,3 +9,14 @@ img {
 #carousel {
   margin-top: 30px;
 }
+
+#carousel a {
+
+  display: flex;
+  justify-content: center;
+}
+
+#carousel img {
+  display: block;
+  width: auto;
+}
