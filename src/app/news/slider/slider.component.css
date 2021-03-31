@@ -11,12 +11,11 @@ img {
 }
 
 #carousel a {
-
-  display: flex;
-  justify-content: center;
+  display: inline-block;
 }
 
 #carousel img {
-  display: block;
   width: auto;
 }
+
+

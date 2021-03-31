@@ -37,16 +37,16 @@ label i {
 }
 
 label i.fa-check-circle-o{
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
 #click:checked ~ label i.fa-check-circle-o {
-    opacity: 1;
+    display: block;
     pointer-events: auto;
 }
 #click:checked ~ label i.fa-comment-o {
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
@@ -57,13 +57,13 @@ label i.fa-check-circle-o{
     max-width: 300px;
     background: #fff;
     box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
-    opacity: 0;
+    display: none;
     border-radius: 15px 15px 0 0;
 
 }
 
 #click:checked ~ .wrapper {
-    opacity: 1;
+    display: block;
     bottom: 85px;
     pointer-events: auto;
 }
