@@ -20,7 +20,7 @@ label{
     background: -webkit-radial-gradient(circle, white, black);;
     text-align: center;
     line-height: 55px;
-    border-radius: 50px;
+    border-radius: 5px;
     font-size: 30px;
     color: #fff;
     cursor: pointer;
@@ -37,20 +37,20 @@ label i {
 }
 
 label i.fa-check-circle-o{
-    display: none;
+    visibility: hidden;
     pointer-events: none;
 }
 
 #click {
-  display: none;
+  visibility: hidden;
 }
 
 #click:checked ~ label i.fa-check-circle-o {
-    display: block;
+    visibility: visible;
     pointer-events: auto;
 }
 #click:checked ~ label i.fa-comment {
-  display: none;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -58,17 +58,17 @@ label i.fa-check-circle-o{
     position: absolute;
     right: 10px;
     bottom: 120px;
-    max-width: 300px;
+    max-width: 333px;
     background: #fff;
     box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
-    display: none;
+    visibility: hidden;
     border-radius: 15px 15px 0 0;
 
 }
 
 #click:checked ~ .wrapper {
-    display: block;
-    bottom: 85px;
+    visibility: visible;
+    bottom: 60px;
     pointer-events: auto;
 }
 
@@ -88,7 +88,7 @@ label i.fa-check-circle-o{
 }
 .chat-box .form{
     /* padding: 10px 15px; */
-    border-radius: 25px;
+    border-radius: 5px;
 }
 .chat-box .form .field{
     height: 50px;
@@ -100,14 +100,21 @@ label i.fa-check-circle-o{
     margin-bottom: 15px;
 }
 
-.textarea textarea{
+#textarea {
     width: 100%;
-    height: 100%;
-    padding-left: 20px;
+    height: 300px;
+    padding: 10px;
     border: 1px solid lightgrey;
     outline: none;
-    border-radius: 25px;
-    font-size: 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    overflow: auto;
+    color: gray;
+}
+
+
+.message {
+  margin-bottom: 5px;
 }
 
 .form .field input,
@@ -115,10 +122,10 @@ label i.fa-check-circle-o{
 .form .textarea textarea{
     width: 100%;
     height: 100%;
-    padding-left: 20px;
+    padding: 10px;
     border: 1px solid lightgrey;
     outline: none;
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 16px;
 }
 
@@ -141,9 +148,9 @@ label i.fa-check-circle-o{
 
 .chat-box .form .textarea textarea{
     height: 100%;
-    border-radius: 50px;
+    border-radius: 5px;
     resize: none;
-    padding: 15px 20px;
+    padding: 10px;
     font-size: 16px;
 }
 
