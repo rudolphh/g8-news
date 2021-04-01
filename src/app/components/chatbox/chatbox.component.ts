@@ -51,7 +51,7 @@ export class ChatboxComponent implements OnInit {
     this.socket.on('chat', (data: any) => {
       if (data.nick && data.message) {
         var chatMsg =
-          "<p style='text-align: right;'>" + data.message +
+          "<p style='text-align: right;'>" + "<span style='color : black'>" + data.message + "</span>" +
           ' <small style="margin: 0 3px 0 5px;"> [' + data.date + '] </small> ' + data.nick + '</p>';
         this.chatMessages += chatMsg;
         this.localStorageService.set('messages', this.chatMessages);
@@ -83,11 +83,11 @@ export class ChatboxComponent implements OnInit {
       var chatMsg =
         "<p><strong>" +
         this.nick +
-        ' <small> [' +
+        ' <small style="margin: 0 5px 0 3px"> [' +
         curDate +
         '] </small>' +
         '</strong>' +
-        this.message +
+        "<span style='color : black'>" + this.message + "</span>" +
         '</p>';
       this.chatMessages += chatMsg;
       this.localStorageService.set('messages', this.chatMessages);
