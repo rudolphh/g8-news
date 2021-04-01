@@ -19,7 +19,7 @@ export class WeatherComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:4000/weather').subscribe((data: any) => {
+    this.http.get('http://g8.rudyah.com:4000/weather').subscribe((data: any) => {
 
     console.log(data);
       this.city=data.name

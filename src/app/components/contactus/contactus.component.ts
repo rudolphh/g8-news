@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css'],
 })
 export class ContactusComponent implements OnInit {
-  
+
   firstname: string = '';
   lastname: string = '';
   email: string = '';
@@ -29,7 +29,7 @@ export class ContactusComponent implements OnInit {
     console.log(data);
 
     this.http
-      .post('http://localhost:4000/addQuery', data)
+      .post('http://g8.rudyah.com:4000/addQuery', data)
       .subscribe((success) => {
         if (success) this.emailMsg = "Well okay! We'll get right back to you";
 

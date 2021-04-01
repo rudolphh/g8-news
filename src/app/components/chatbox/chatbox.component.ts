@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //my imports
 import {io} from 'socket.io-client'
-const SOCKET_ENDPOINT = 'localhost:4000';
+const SOCKET_ENDPOINT = 'g8.rudyah.com:4000';
 
 @Component({
   selector: 'app-chatbox',
@@ -31,10 +31,15 @@ export class ChatboxComponent implements OnInit {
      });
   }
 
+  ngOnDestroy() : void {
+    //stop listening message
+    this.socket.off('chat');
+  }
+
   SendMessage() {
-    
+
     console.log('nick: '+this.nick+', message: ' + this.message)
-    
+
     this.socket.emit('nick', this.nick);
     this.socket.emit('chat', this.message);
 
